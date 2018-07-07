@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{88C14358-E107-41A3-8EF0-6581C1377E72}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XNA2D</RootNamespace>
+    <AssemblyName>XNA2D</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework, Version=3.6.0.1625, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Core\Activity\ActivityAdapter.cs" />
+    <Compile Include="Core\Activity\ActivityMap.cs" />
+    <Compile Include="Core\Activity\DefaultTransitionInfo.cs" />
+    <Compile Include="Core\Activity\EventQueue.cs" />
+    <Compile Include="Core\Activity\ExGame.cs" />
+    <Compile Include="Core\Activity\IActivity.cs" />
+    <Compile Include="Core\Activity\ITransitionInfo.cs" />
+    <Compile Include="Core\Activity\LayerActivity.cs" />
+    <Compile Include="Core\Activity\LogoActivity.cs" />
+    <Compile Include="Core\Activity\NullTransitionInfo.cs" />
+    <Compile Include="Core\Animation\AnimationComponent.cs" />
+    <Compile Include="Core\Animation\AnimationEventArgs.cs" />
+    <Compile Include="Core\Animation\AnimationFrameBase.cs" />
+    <Compile Include="Core\Animation\AnimationFrameProxy.cs" />
+    <Compile Include="Core\Animation\AnimationInstance.cs" />
+    <Compile Include="Core\Animation\AnimationMediator.cs" />
+    <Compile Include="Core\Animation\FadeInAnimation.cs" />
+    <Compile Include="Core\Animation\FadeOutAnimation.cs" />
+    <Compile Include="Core\Animation\IAnimationFrame.cs" />
+    <Compile Include="Core\Animation\IAnimationFrameFactory.cs" />
+    <Compile Include="Core\Animation\IDrawable.cs" />
+    <Compile Include="Core\Animation\TextDrawable.cs" />
+    <Compile Include="Core\Animation\TextureDrawable.cs" />
+    <Compile Include="Core\Application.cs" />
+    <Compile Include="Core\Layer\ImageLayer.cs" />
+    <Compile Include="Core\Layer\Layer.cs" />
+    <Compile Include="Core\Layer\LayerBase.cs" />
+    <Compile Include="Core\Layer\LayerComponent.cs" />
+    <Compile Include="Core\Layer\TextLayer.cs" />
+    <Compile Include="Core\UI\BorderLayout.cs" />
+    <Compile Include="Core\UI\Button\ActionEventArgs.cs" />
+    <Compile Include="Core\UI\Button\Button.cs" />
+    <Compile Include="Core\UI\Button\ButtonModel.cs" />
+    <Compile Include="Core\UI\Button\DefaultButtonModel.cs" />
+    <Compile Include="Core\UI\Canvas.cs" />
+    <Compile Include="Core\UI\Detector.cs" />
+    <Compile Include="Core\UI\DrawableGameComponentProxy.cs" />
+    <Compile Include="Core\UI\DrawManager.cs" />
+    <Compile Include="Core\UI\Handle.cs" />
+    <Compile Include="Core\UI\IControl.cs" />
+    <Compile Include="Core\UI\ILayoutConstraints.cs" />
+    <Compile Include="Core\UI\ILayoutManager.cs" />
+    <Compile Include="Core\UI\IValidRoot.cs" />
+    <Compile Include="Core\UI\IXNAComponent.cs" />
+    <Compile Include="Core\UI\IXNAComponentExtensions.cs" />
+    <Compile Include="Core\UI\IXNAContainer.cs" />
+    <Compile Include="Core\UI\Label\Label.cs" />
+    <Compile Include="Core\UI\List\DefaultListCellRenderer.cs" />
+    <Compile Include="Core\UI\List\DefaultListModel.cs" />
+    <Compile Include="Core\UI\List\DefaultSingleSelectionModel.cs" />
+    <Compile Include="Core\UI\List\ItemEnterEventArgs.cs" />
+    <Compile Include="Core\UI\List\ItemList.cs" />
+    <Compile Include="Core\UI\List\ListCellRenderer.cs" />
+    <Compile Include="Core\UI\List\ListDataEventArgs.cs" />
+    <Compile Include="Core\UI\List\ListModel.cs" />
+    <Compile Include="Core\UI\List\SingleSelectionModel.cs" />
+    <Compile Include="Core\UI\Panel.cs" />
+    <Compile Include="Core\UI\RangeBar\DefaultRangeModel.cs" />
+    <Compile Include="Core\UI\RangeBar\RangeBar.cs" />
+    <Compile Include="Core\UI\RangeBar\RangeModel.cs" />
+    <Compile Include="Core\UI\Scroll\ScrollTexture.cs" />
+    <Compile Include="Core\UI\SpringLayout.cs" />
+    <Compile Include="Core\UI\Table\DefaultHeader.cs" />
+    <Compile Include="Core\UI\Table\DefaultTableCellRenderer.cs" />
+    <Compile Include="Core\UI\Table\DefaultTableModel.cs" />
+    <Compile Include="Core\UI\Table\Header.cs" />
+    <Compile Include="Core\UI\Table\HeaderCellRenderer.cs" />
+    <Compile Include="Core\UI\Table\Table.cs" />
+    <Compile Include="Core\UI\Table\TableCellRenderer.cs" />
+    <Compile Include="Core\UI\Table\TableDataEventArgs.cs" />
+    <Compile Include="Core\UI\Table\TableModel.cs" />
+    <Compile Include="Core\UI\Talk\DefaultTalkModel.cs" />
+    <Compile Include="Core\UI\Talk\MutableTalkModel.cs" />
+    <Compile Include="Core\UI\Talk\Talk.cs" />
+    <Compile Include="Core\UI\Talk\TalkFlow.cs" />
+    <Compile Include="Core\UI\Talk\TalkModel.cs" />
+    <Compile Include="Core\UI\Talk\TalkModelEventArgs.cs" />
+    <Compile Include="Core\UI\Text\AbstractDocument.cs" />
+    <Compile Include="Core\UI\Text\Caret.cs" />
+    <Compile Include="Core\UI\Text\DefaultCaret.cs" />
+    <Compile Include="Core\UI\Text\Document.cs" />
+    <Compile Include="Core\UI\Text\DocumentEventArgs.cs" />
+    <Compile Include="Core\UI\Text\PlainDocument.cs" />
+    <Compile Include="Core\UI\Text\TextComponent.cs" />
+    <Compile Include="Core\UI\Text\TextField.cs" />
+    <Compile Include="Core\UI\Tree\DefaultTreeCellRenderer.cs" />
+    <Compile Include="Core\UI\Tree\DefaultTreeNode.cs" />
+    <Compile Include="Core\UI\Tree\ITreeNode.cs" />
+    <Compile Include="Core\UI\Tree\Tree.cs" />
+    <Compile Include="Core\UI\Tree\TreeCellRenderer.cs" />
+    <Compile Include="Core\UI\Tree\TreeNodeEventArgs.cs" />
+    <Compile Include="Core\UI\Window.cs" />
+    <Compile Include="Core\UI\WindowManager.cs" />
+    <Compile Include="Core\UI\XEventArgs.cs" />
+    <Compile Include="Core\UI\XNAComponentBase.cs" />
+    <Compile Include="Core\UI\XNAContainerBase.cs" />
+    <Compile Include="Core\UI\XNAPoint.cs" />
+    <Compile Include="Core\UI\XNARectangle.cs" />
+    <Compile Include="Core\UI\XNASize.cs" />
+    <Compile Include="Core\UI\YesNo\YesNo.cs" />
+    <Compile Include="Core\UI\YesNo\YesNoEnum.cs" />
+    <Compile Include="Core\UI\YesNo\YesNoEventArgs.cs" />
+    <Compile Include="Core\Utils\Actions.cs" />
+    <Compile Include="Core\Utils\ContentEventArgs.cs" />
+    <Compile Include="Core\Utils\DictionaryExtensions.cs" />
+    <Compile Include="Core\Utils\DrawUtils.cs" />
+    <Compile Include="Core\Utils\FlyweightContents.cs" />
+    <Compile Include="Core\Utils\FPSManager.cs" />
+    <Compile Include="Core\Utils\FrameTimer.cs" />
+    <Compile Include="Core\Utils\Schedule.cs" />
+    <Compile Include="Core\Utils\SerializedDictionary.cs" />
+    <Compile Include="Core\Utils\Serializer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\Physic\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

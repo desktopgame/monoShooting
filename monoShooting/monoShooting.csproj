@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0652BD79-1456-445B-AAF0-54C4624F9265}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>monoShooting</RootNamespace>
+    <AssemblyName>monoShooting</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MonoGamePlatform>Windows</MonoGamePlatform>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Core\Activity\ControllerActivity.cs" />
+    <Compile Include="Core\Activity\GameActivity.cs" />
+    <Compile Include="Core\Activity\GameOverActivity.cs" />
+    <Compile Include="Core\Activity\PauseActivity.cs" />
+    <Compile Include="Core\Activity\TitleActivity.cs" />
+    <Compile Include="Core\DefaultDefenceModel.cs" />
+    <Compile Include="Core\DefaultFieldModel.cs" />
+    <Compile Include="Core\DefaultScoreModel.cs" />
+    <Compile Include="Core\DefenseModel.cs" />
+    <Compile Include="Core\Field.cs" />
+    <Compile Include="Core\FieldController.cs" />
+    <Compile Include="Core\FieldModel.cs" />
+    <Compile Include="Core\FieldModelEventArgs.cs" />
+    <Compile Include="Core\GameObject\Animation\AnimationObject.cs" />
+    <Compile Include="Core\GameObject\Animation\ExplodeAnimation.cs" />
+    <Compile Include="Core\GameObject\Bullet\ArcBallistic.cs" />
+    <Compile Include="Core\GameObject\Bullet\Bullet.cs" />
+    <Compile Include="Core\GameObject\Bullet\IBallistic.cs" />
+    <Compile Include="Core\GameObject\Bullet\StraightBallistic.cs" />
+    <Compile Include="Core\GameObject\Bullet\TrackingBallistic.cs" />
+    <Compile Include="Core\GameObject\Bullet\WaveBallistic.cs" />
+    <Compile Include="Core\GameObject\GameObjectBase.cs" />
+    <Compile Include="Core\GameObject\GameObjectSimple.cs" />
+    <Compile Include="Core\GameObject\GameObjectUtils.cs" />
+    <Compile Include="Core\GameObject\Generator\IGenerator.cs" />
+    <Compile Include="Core\GameObject\Generator\NormalGenerator.cs" />
+    <Compile Include="Core\GameObject\IGameObject.cs" />
+    <Compile Include="Core\GameObject\Item\Item.cs" />
+    <Compile Include="Core\GameObject\Item\ItemAccelerator.cs" />
+    <Compile Include="Core\GameObject\Item\ItemEnergy.cs" />
+    <Compile Include="Core\GameObject\Item\ItemHart.cs" />
+    <Compile Include="Core\GameObject\Item\ItemHeavy.cs" />
+    <Compile Include="Core\GameObject\Item\ItemSlowly.cs" />
+    <Compile Include="Core\GameObject\Item\ItemSpring.cs" />
+    <Compile Include="Core\GameObject\Laser\Laser.cs" />
+    <Compile Include="Core\GameObject\Unit\AIPlayer.cs" />
+    <Compile Include="Core\GameObject\Unit\BossBase.cs" />
+    <Compile Include="Core\GameObject\Unit\DamageEventArgs.cs" />
+    <Compile Include="Core\GameObject\Unit\DamageSource.cs" />
+    <Compile Include="Core\GameObject\Unit\IBoss.cs" />
+    <Compile Include="Core\GameObject\Unit\IUnit.cs" />
+    <Compile Include="Core\GameObject\Unit\IUnitEnemy.cs" />
+    <Compile Include="Core\GameObject\Unit\IUnitPlayer.cs" />
+    <Compile Include="Core\GameObject\Unit\PlayerBase.cs" />
+    <Compile Include="Core\GameObject\Unit\Proto.cs" />
+    <Compile Include="Core\GameObject\Unit\ProtoSP.cs" />
+    <Compile Include="Core\GameObject\Unit\RandomEnemy.cs" />
+    <Compile Include="Core\GameObject\Unit\RandomEnemy2.cs" />
+    <Compile Include="Core\GameObject\Unit\UnitBase.cs" />
+    <Compile Include="Core\GameObject\Unit\UnitEnemyBase.cs" />
+    <Compile Include="Core\GameObject\Unit\UnitSpecial.cs" />
+    <Compile Include="Core\GameObject\Unit\UserPlayer.cs" />
+    <Compile Include="Core\ScoreModel.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WpfFontPipeline">
+      <HintPath>..\..\..\..\Desktop\Apps\WpfFontPipeline\WpfFontPipeline.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Image\Animation\bomb.png" />
+    <Content Include="Content\Image\Animation\bomb2.png" />
+    <Content Include="Content\Image\backgroundLayerBack.png" />
+    <Content Include="Content\Image\backgroundLayerFront.png" />
+    <Content Include="Content\Image\enemyBeam.png" />
+    <Content Include="Content\Image\gameover.png" />
+    <Content Include="Content\Image\goal.png" />
+    <Content Include="Content\Image\Item\accelerator32.png" />
+    <Content Include="Content\Image\Item\hart.png" />
+    <Content Include="Content\Image\Item\heavy32.png" />
+    <Content Include="Content\Image\Item\slowly32.png" />
+    <Content Include="Content\Image\Item\spring32.png" />
+    <Content Include="Content\Image\pause.png" />
+    <Content Include="Content\Image\playerBeam.png" />
+    <Content Include="Content\Image\title.png" />
+    <Content Include="Content\Image\Unit\enemy.png" />
+    <Content Include="Content\Image\Unit\enemy2.png" />
+    <Content Include="Content\Image\Unit\enemy3.png" />
+    <Content Include="Content\Image\Unit\player.png" />
+    <Content Include="Content\Image\Unit\proto.png" />
+    <Content Include="Content\Sound\Effect\clear.wav" />
+    <Content Include="Content\Sound\Effect\collect.wav" />
+    <Content Include="Content\Sound\Effect\damage.wav" />
+    <Content Include="Content\Sound\Effect\death.wav" />
+    <Content Include="Content\Sound\Effect\enter.wav" />
+    <Content Include="Content\Sound\Effect\gameover.wav" />
+    <Content Include="Content\Sound\Effect\heal.wav" />
+    <Content Include="Content\Sound\Effect\hint.wav" />
+    <Content Include="Content\Sound\Effect\miss.wav" />
+    <Content Include="Content\Sound\Effect\ok.wav" />
+    <Content Include="Content\Sound\Effect\pause.wav" />
+    <Content Include="Content\Sound\Effect\pistol.wav" />
+    <Content Include="Content\Sound\Effect\rifle.wav" />
+    <Content Include="Content\Sound\Effect\select.wav" />
+    <Content Include="Content\Sound\Effect\stage_clear.wav" />
+    <Content Include="Content\Sound\Effect\status_down.wav" />
+    <Content Include="Content\Sound\Effect\status_up.wav" />
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" />
+    <None Include="app.manifest" />
+    <None Include="Content\Font\MS_12.spritefont" />
+    <None Include="Content\Font\MS_26.spritefont" />
+    <None Include="Content\Font\MS_30.spritefont" />
+    <None Include="Content\Image\Animation\Thumbs.db" />
+    <None Include="Content\Image\Item\Thumbs.db" />
+    <None Include="Content\Image\Thumbs.db" />
+    <None Include="Content\Image\Unit\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\Sound\Song\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bean\Bean.csproj">
+      <Project>{8e5c8233-024b-47c8-a648-1b38ee3abd60}</Project>
+      <Name>Bean</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XNA2D\XNA2D.csproj">
+      <Project>{88c14358-e107-41a3-8ef0-6581c1377e72}</Project>
+      <Name>XNA2D</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
