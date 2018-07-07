@@ -21,7 +21,7 @@ namespace Shoot.Core.GameObject.Unit {
 
 		public AIPlayer() : base() {
 			string scriptPath = Environment.CurrentDirectory + Path.DirectorySeparatorChar + @"ai.ss";
-			string source = File.ReadAllText(scriptPath);
+		//	string source = File.ReadAllText(scriptPath);
 			this.scheduleOfTask = new Schedule(10);
 		//	this.jitCompliationUnit = JITCompilationUnit.Compile(source);
 		//	this.injectSupport = new InjectSupport();
